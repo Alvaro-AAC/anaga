@@ -19,14 +19,14 @@
       <div class="col-12 col-md-6 offset-md-3">
         <div class="card">
           <div class="card-body">
-            <h2>Contacto</h2>
-            <p>Encuentranos en la siguiente dirección</p>
+            <h2>Reporte</h2>
+            <p>A continuación puedes realizar tu reporte</p>
             <div id="viewDiv"></div>
             <hr>
             <form action="" method="POST">
               {% csrf_token %}
               {{ form.as_p }}
-              <input type="submit" id="submit" value="Enviar Mensaje" class="btn w-100 btn-success float-right" disabled>
+              <input type="submit" id="submit" value="Enviar reporte" class="btn w-100 btn-success float-right" disabled>
             </form>
             {{mensaje}}
           </div>

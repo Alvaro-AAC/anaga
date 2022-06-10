@@ -6,13 +6,13 @@ $(document).ready(function() {
     });
 
     // Validación del nombre
-    $("#asunto").keyup(function() {
+    $("#usuario_reportado").keyup(function() {
         asuntoValidation();
         submitValidation();
     });
 
     // Validación del mensaje
-    $("#message").keyup(function() {
+    $("#evidencia").keyup(function() {
       messageValidation();
       submitValidation();
     });
@@ -26,57 +26,64 @@ $(document).ready(function() {
     function nameValidation() {
       $("#name").removeClass('is-valid');
       $("#name").removeClass('is-invalid');
-  
-      if ( $("#name").val().match(/^$/g)) {
-        $("#name").addClass('is-invalid');
-      }
-      else if ( $("#name").val().match(/^.{64,}$/g)) {
-        $("#name").addClass('is-invalid');
-      }
-      else if ($("#name").val().match(/^\S+(?: \S+)*$/g) == null) {
-        $("#name").addClass('is-invalid');
-      }
-      else if ($("#name").val().match(/\d+/g) != null) {
-        $("#name").addClass('is-invalid');
+      if ($('#name').val() != '') {
+        if ( $("#name").val().match(/^$/g)) {
+          $("#name").addClass('is-invalid');
+        }
+        else if ( $("#name").val().match(/^.{64,}$/g)) {
+          $("#name").addClass('is-invalid');
+        }
+        else if ( $("#name").val().match(/\W/)) {
+          $("#name").addClass('is-invalid');
+        }
+        else if ($("#name").val().match(/^\S+(?: \S+)*$/g) == null) {
+          $("#name").addClass('is-invalid');
+        }
+        else if ($("#name").val().match(/\d+/g) != null) {
+          $("#name").addClass('is-invalid');
+        }
+        else {
+          $("#name").addClass('is-valid');
+        }
       }
       else {
         $("#name").addClass('is-valid');
       }
-    }
+  }
 
     function asuntoValidation() {
-        $("#asunto").removeClass('is-valid');
-        $("#asunto").removeClass('is-invalid');
+        $("#usuario_reportado").removeClass('is-valid');
+        $("#usuario_reportado").removeClass('is-invalid');
     
-        if ( $("#asunto").val().match(/^$/g)) {
-          $("#asunto").addClass('is-invalid');
+        if ( $("#usuario_reportado").val().match(/^$/g)) {
+          $("#usuario_reportado").addClass('is-invalid');
         }
-        else if ( $("#asunto").val().match(/^.{64,}$/g)) {
-          $("#asunto").addClass('is-invalid');
+        else if ( $("#usuario_reportado").val().match(/^.{64,}$/g)) {
+          $("#usuario_reportado").addClass('is-invalid');
         }
-        else if ($("#asunto").val().match(/^\S+(?: \S+)*$/g) == null) {
-          $("#asunto").addClass('is-invalid');
+        else if ($("#usuario_reportado").val().match(/^\S+(?: \S+)*$/g) == null) {
+          $("#usuario_reportado").addClass('is-invalid');
         }
         else {
-          $("#asunto").addClass('is-valid');
+          $("#usuario_reportado").addClass('is-valid');
         }
       }
   
     function messageValidation(){
-      $("#message").removeClass('is-valid');
-      $("#message").removeClass('is-invalid');
+      $("#evidencia").removeClass('is-valid');
+      $("#evidencia").removeClass('is-invalid');
   
-      if ( $("#message").val().match(/^$/g)) {
-        $("#message").addClass('is-invalid');
+      if ( $("#evidencia").val().match(/^$/g)) {
+        $("#evidencia").addClass('is-invalid');
       }
-      else if ( $("#message").val().match(/^.{64,}$/g)) {
-        $("#message").addClass('is-invalid');
+      else if ( $("#evidencia").val().match(/^.{64,}$/g)) {
+        $("#evidencia").addClass('is-invalid');
       }
-      else if ($("#message").val().match(/^\S+(?: \S+)*$/g) == null) {
-        $("#message").addClass('is-invalid');
+      else if ($("#evidencia").val().match(/^\S+(?: \S+)*$/g) == null) {
+        $("#evidencia").addClass('is-invalid');
       }
       else {
-        $("#message").addClass('is-valid');
+        $("#evidencia").addClass('is-valid');
       }
     }
   
@@ -112,10 +119,10 @@ $(document).ready(function() {
       else if (!$("#email").hasClass('is-valid')) {
         $("#submit").attr("disabled", true);
       }
-      else if (!$("#asunto").hasClass('is-valid')) {
+      else if (!$("#usuario_reportado").hasClass('is-valid')) {
         $("#submit").attr("disabled", true);
       }
-      else if (!$("#message").hasClass('is-valid')) {
+      else if (!$("#evidencia").hasClass('is-valid')) {
         $("#submit").attr("disabled", true);
       }
       else{

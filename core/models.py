@@ -31,13 +31,14 @@ class Soporte(models.Model):
     def __str__(self):
         return self.nombre
 
-class Contacto(models.Model):
+class Reporte(models.Model):
 
-    nombre = models.CharField(max_length=64, verbose_name='Nombre')
+    nombre = models.CharField(max_length=64, verbose_name='Nombre', blank=True, null=True)
     correo = models.EmailField()
-    telefono = models.CharField(max_length=12)
-    asunto = models.CharField(max_length=100)
-    mensaje = models.TextField()
+    juego = models.CharField(max_length=70)
+    tipo_reporte = models.CharField(max_length=150)
+    usuario_reportado = models.CharField(max_length=100)
+    Evidencia = models.TextField()
 
     def __str__(self):
         return self.nombre

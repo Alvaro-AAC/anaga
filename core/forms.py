@@ -99,28 +99,44 @@ class SoporteForm(forms.ModelForm):
         model = Soporte
         fields = ["nombre", "correo", "tipo_consulta", "mensaje"]
 
-class ContactoForm(forms.ModelForm):
-    nombre = forms.CharField(max_length=50, label="Nombre", widget = forms.TextInput(
+class ReporteForm(forms.ModelForm):
+    nombre = forms.CharField(max_length=50, label="Nombre (opcional)", widget = forms.TextInput(
         attrs = {'class': 'form-control',
-                 'id': 'name'}))
+                 'id': 'name'}),
+                 required=False)
     correo = forms.CharField(max_length=100, label="Correo electrónico", widget = forms.EmailInput(
         attrs = {'class': 'form-control',
                  'id': 'email'}))
-    telefono = forms.CharField(max_length=12, label="Telefono", widget = forms.NumberInput(
-        attrs = {'class': 'form-control',
-                 'placeholder': '569123456789',
+    juego = forms.CharField(max_length=70, widget = forms.Select(
+        choices = ( 
+            ('Counter strike', 'Counter strike'),
+            ('Valorant', 'Valorant'),
+            ('League of legends', 'League of legends'),
+            ('Minecraft', 'Minecraft') ),
+        attrs = {'class': 'form-select',
                  'id': 'number'}))
-    asunto = forms.CharField(max_length=100, label="Asunto", widget = forms.TextInput(
+    tipo_reporte = forms.CharField(max_length=100, label="Tipo", widget = forms.Select(
+        choices = ( 
+            ('Abuso verbal', 'Abuso verbal'),
+            ('Acoso', 'Acoso'),
+            ('Discurso de odio', 'Discurso de odio'),
+            ('Xenofobia', 'Xenofobia'),
+            ('Homofobia', 'Homofobia'),
+            ('Misoginia', 'Misoginia'),
+            ('Otro', 'Otro') ),
+        attrs = {'class': 'form-select',
+                 'id': 'tipo_reporte'}))
+    usuario_reportado = forms.CharField(max_length=100, label="Usuario reportado", widget = forms.TextInput(
         attrs = {'class': 'form-control',
-                 'placeholder': 'Ingrese un asunto',
-                 'id': 'asunto'}))
-    mensaje = forms.CharField(label="Mensaje", widget = forms.Textarea(
+                'placeholder': 'Ingrese el nombre del usuario reportado',
+                'id': 'usuario_reportado'}))
+    Evidencia = forms.CharField(label="Evidencias", widget = forms.Textarea(
         attrs = {'class': 'form-control',
-                 'placeholder': 'Ingrese un mensaje aqui',
-                 'id': 'message',
-                 'rows': 4}))
+                'placeholder': 'Ingrese las evidencias aquí',
+                'id': 'evidencia',
+                'rows': 4}))
     class Meta:
-        model = Contacto
+        model = Reporte
         fields = '__all__'
 
 class RemoveForm(forms.ModelForm):

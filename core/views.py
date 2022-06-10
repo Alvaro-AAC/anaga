@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.models import User
-from core.models import Contacto
-from .forms import RegisterForm, EditUserForm, UserLoginForm, SoporteForm, ContactoForm, UserChangeForm, RemoveForm
+from core.models import *
+from .forms import RegisterForm, EditUserForm, UserLoginForm, SoporteForm, ReporteForm, UserChangeForm, RemoveForm
 from django.contrib.auth import authenticate, login as login_auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -18,10 +18,10 @@ def galeria(request):
 
 def contacto(request):
     data = {
-        'form': ContactoForm()
+        'form': ReporteForm()
     }
     if request.method == 'POST':
-        formulario = ContactoForm(data = request.POST)
+        formulario = ReporteForm(data = request.POST)
         if formulario.is_valid():
             formulario.save()
             messages.success(request, "El mensaje ha sido enviado correctamente")
