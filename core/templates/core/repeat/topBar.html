@@ -17,13 +17,7 @@
             <a class="text-opacity-75" href="{% url 'quienes_somos' %}">QUIENES SOMOS</a>
           </li>
           <li class="nav-item my-2 my-sm-0 me-sm-4">
-            <a class="text-opacity-75" href="{% url 'galeria' %}">GALERÍA DE FOTOS</a>
-          </li>
-          <li class="nav-item my-2 my-sm-0 me-sm-4">
             <a class="text-opacity-75" href="{% url 'contacto' %}">CONTACTO</a>
-          </li>
-          <li class="nav-item my-2 my-sm-0 me-sm-4">
-            <a class="text-opacity-75" href="{% url 'soporte' %}">SOPORTE</a>
           </li>
           
           {% if user.is_authenticated %}
