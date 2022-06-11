@@ -70,7 +70,7 @@
 }
 
 *{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Abel', sans-serif;
 }
 
 /*imagen de fondo para navbar*/
@@ -80,6 +80,11 @@
     background-size: cover;
     background-position: center center;
 } */
+
+.bgTopBar{
+    background: rgb(2,58,59);
+    background: linear-gradient(36deg, rgba(2,58,59,1) 0%, rgba(0,0,0,1) 50%, rgba(31,0,48,1) 100%);
+}
 
 #openTopMenu a{
     text-decoration: none;
@@ -97,8 +102,8 @@
 .parrafoImg img{
     border-radius: 8px;
     max-height: 300px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+/* box-shadow: 0 0 20px 8px #00184d; */
 
 .logoImg{
     max-height: 25px;
@@ -130,7 +135,8 @@ nav ~ * {
 }
 
 footer{
-    background-color: #100c08
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg,  #00184d, rgba(0,0,0,1) 100%);
 }
 
 footer li, a {
@@ -150,7 +156,7 @@ footer h5 {
 }
 
 a:hover{
-    color: #73dd6f;
+    color: #6fd8dd;
 }
 
 
@@ -168,7 +174,8 @@ a:hover{
 
 .carouselText p{
     font-weight: lighter;
-    color: #b7ff96;
+    color: #ffffff;
+    text-shadow: rgb(0, 255, 225) 1px 0 10px;
 }
 
 /* QUIENES SOMOS */

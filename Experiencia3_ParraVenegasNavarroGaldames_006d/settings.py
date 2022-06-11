@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -83,18 +82,25 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'tcps://adb.sa-santiago-1.oraclecloud.com:1522/g3fe9e0e9ee6545_macetitasdb_high.adb.oraclecloud.com?wallet_location=./Wallet_macetitasDB',
-        'USER': 'admin',
-        'PASSWORD': 'Macetitas.1234',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.oracle',
+    #     'NAME': 'tcps://adb.sa-santiago-1.oraclecloud.com:1522/g3fe9e0e9ee6545_macetitasdb_high.adb.oraclecloud.com?wallet_location=./Wallet_macetitasDB',
+    #     'USER': 'admin',
+    #     'PASSWORD': 'Macetitas.1234',
+    # }
     # 'default': {
     #     'ENGINE': 'django.db.backends.oracle',
     #     'NAME': 'localhost:1521/xe',
     #     'USER': 'SYSTEM',
     #     'PASSWORD': '1234',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'anaga',
+        'HOST': 'prueba3db.postgres.database.azure.com',
+        'USER': 'alvaro',
+        'PASSWORD': 'Admin1234',
+    }
 }
 
 
